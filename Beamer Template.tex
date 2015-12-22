@@ -1,0 +1,120 @@
+\documentclass[t,pdf,hyperref={unicode}]{beamer} % [t], [c], [b] -- вертикальное выравнивание на слайдах 
+%\documentclass[handout]{beamer} % Раздаточный материал
+%\documentclass[aspectratio=169]{beamer} % Соотношение сторон
+
+\usetheme{Goettingen}  % Тема оформления
+\usecolortheme{beaver} % Цветовая схема
+
+\usepackage{cmap}			
+\usepackage{mathtext} 			
+\usepackage[T2A]{fontenc}		
+\usepackage[utf8]{inputenc}			
+\usepackage[english,russian]{babel}
+
+\newtheorem{rtheorem}{Теорема}
+\newtheorem{rproof}{Доказательство}
+\newtheorem{rexample}{Пример}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{icomma}
+\usepackage{graphicx}
+	\graphicspath{{images/}} 
+	\setlength\fboxsep{3pt}
+	\setlength\fboxrule{1pt}
+	
+\usepackage{wrapfig}
+\usepackage{array,tabularx,tabulary}
+\usepackage{longtable}  
+\usepackage{multirow}
+\usepackage{multicol} 
+\usepackage{lastpage} 
+\usepackage{soul} 
+\usepackage{csquotes} 
+\usepackage{verbatim}
+\usepackage{tikz} 
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+\title{Title}
+\subtitle{Subtitle}
+\author{Author}
+\date{\today}
+\institute[University]{Full Name}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\section{First Section}
+\subsection{First Subsection}
+
+\begin{frame}[c]
+	\frametitle{\insertsection} 
+	\framesubtitle{\insertsubsection}
+	\begin{block}{Block Name}
+		\begin{itemize}
+			\item One\pause
+			\item Two
+		\end{itemize}
+	\end{block}
+	\includegraphics{File}
+	\end{frame}
+
+\subsection{Second Subsection}
+ 
+\begin{frame}[fragile] 
+	\frametitle{\insertsection} 
+	\framesubtitle{\insertsubsection}
+	\alert<1>{\alert<5>{\texttt{<?xml version="1.0"\ \!encoding="UTF-16"?>}}\\
+	\alert<6>{\texttt{<!DOCTYPE quiz>}}\\
+	\alert<7>{\texttt{<?xml-stylesheet href="stylesheet.css"?>}}\\}
+	\alert<2>{\texttt{<quiz>}\\
+	\alert<3>{\texttt{\quad<qanda seq="1"\!\,>}\\
+	\texttt{\quad\quad<question>}\\
+	\texttt{\quad\quad\quad Who was the 42-d president of the USA?}\\
+	\texttt{\quad\quad</question>}\\
+	\texttt{\quad\quad<answer>}\\
+	\texttt{\quad\quad\quad William Jefferson Clinton}\\
+	\texttt{\quad\quad</answer>}\\
+	\texttt{\quad</qanda>}}\\
+	\alert<4>{\texttt{\quad<!-\,\!- Note: We need to add more questions. -\,\!->}}\\
+	\alert<8>{\texttt{<!\ [CDATA[if(a<b \&\& b<c) \{...\}\ ]]>}}\\
+	\texttt{</quiz>}}	
+\end{frame}
+
+\begin{frame}
+    \uncover<4->{Эта строчка появляется не сразу, но занимает место.}
+    \only<5->{Эта строчка появляется не сразу и не занимает места.}
+    \begin{enumerate}
+        \item<1-5> Сначала появляются первый и последний пункт (первый потом исчезнет).
+        \item<2-> Потом второй
+        \item<3-> И наконец третий
+        \item<1-> Последний пункт появляется вместе с первым
+    	\item<6-> В самом конце первый пункт исчезает, зато появляется картинка: \insertlogo.
+    \end{enumerate}
+    \alt<4>{Это \alert{четвертый} слайд}{Это не четвертый слайд.}
+    \temporal<3-4>{Слайды 1, 2}{Слайды 3, 4}{Сайды 5, 6, 7, ...}
+\end{frame}
+
+\begin{frame}{Пример из руководства}
+   \textbf{This line is bold on all three slides.}
+   \textbf<2>{This line is bold only on the second slide.}
+   \textbf<3>{This line is bold only on the third slide.}
+   \textbf<3,4>{Эта строчка полужирная на 3-м и 4-м слайде.}
+	\color<3-4>[RGB]{255,0,0} Этот текст красный только на сладах 3-4.
+\end{frame}
+
+\begin{frame}
+    \begin{rtheorem}
+		Формулировка теоремы.    
+	\end{rtheorem}
+	\begin{rproof}
+		Текст доказательства.
+    \end{rproof}
+	\begin{rexample}
+		Текст примера.
+	\end{rexample}
+\end{frame}
+
+
+\end{document}
