@@ -1,9 +1,8 @@
 \documentclass[a4paper, 10pt]{article}
 %\documentclass[10pt, a4paper, oneside
-%headinclude,footinclude,  % extra spacing for the header and footer
-%BCOR5mm,                  % binding correction
+%  headinclude,footinclude,  % extra spacing for the header and footer
+%	 BCOR5mm,                  % binding correction
 %]{scrartcl}
-
 
 %\usepackage{arsclassica}            % english font
 \usepackage{mathtext}                % russian letters in formulas
@@ -19,7 +18,7 @@
 \usepackage{pscyr}         % nice russian font
 \usepackage{indentfirst}   % paragraph indent in Russian texts
 \usepackage{lastpage}
-\usepackage{misccorr}	   % an addition to babel's package
+\usepackage{misccorr}	     % an addition to babel's package
 \usepackage{enumitem}      % for manipulating the whitespace between and within lists
 \usepackage{etoolbox}      % logical operators
 \usepackage{soul}          % detente, underlining, crossing etc.
@@ -27,6 +26,7 @@
 \usepackage{iitem}         % macros for multilevel item lists (\iitem, \iiitem, \ivtem)
 \usepackage{ulem}      	   % underline
 \frenchspacing             % traditional Russian whitespaces
+
 % New environment with reduced indentation:
 \newenvironment{itemize*}%
   {\begin{itemize}%
@@ -42,13 +42,13 @@
 
 %%% Some math %%%
 \usepackage{amsmath, amsfonts, amssymb, amsthm} % AMS-math packages
-\usepackage{latexsym}							% extra math symbols
+\usepackage{latexsym}							              % extra math symbols
 \usepackage{icomma}                             % smart comma
-\usepackage{decimal}   							% changing of comma behavior depending on mode
+\usepackage{decimal}   							            % changing of comma behavior depending on mode
 %\mathtoolsset{showonlyrefs=true}               % show numbers only those formulas, which have \eqref{}
 %\usepackage{leqno}                             % formulas numbers at left side
 \newcommand*{\hm}[1]{#1\nobreak\discretionary{}
-    {\hbox{$\mathsurround=0pt #1$}}{}}          % hyphenation for formulas
+  {\hbox{$\mathsurround=0pt #1$}}{}}          % hyphenation for formulas
 % Redefenition to traditional Russian math symbols:
 \renewcommand{\epsilon}{\ensuremath{\varepsilon}}
 \renewcommand{\phi}{\ensuremath{\varphi}}
@@ -62,9 +62,9 @@
     
 %%% Images %%%
 \usepackage{graphicx}         % main graphics package
-	\graphicspath{{images/}}  % containing folders 
-	\setlength\fboxsep{3pt}   % indent frame \fbox{} from the image
-	\setlength\fboxrule{1pt}  % frame \fbox {}lines thickness 
+	\graphicspath{{images/}}    % containing folders 
+	\setlength\fboxsep{3pt}     % indent frame \fbox{} from the image
+	\setlength\fboxrule{1pt}    % frame \fbox {}lines thickness 
 \usepackage{wrapfig}          % text wrapping
 %\renewcommand{\rmdefault}{ftm}
 \usepackage{subfigure}
@@ -75,7 +75,7 @@
 \usepackage{array,tabularx,tabulary}  % extra table features
 \usepackage{longtable}                % multipage tables
 \usepackage{multirow}                 % merge rows in tables
-\usepackage{multicol}				  % merge columns in tables
+\usepackage{multicol}				          % merge columns in tables
 \usepackage{makecell}                 % com­mon lay­outs for tab­u­lar col­umn heads in whole doc­u­ments
 %\usepackage{booktabs}                % beatiful professional tables
 
@@ -92,27 +92,13 @@
 %%% Captions under the images and tables %%%
 \usepackage[singlelinecheck=off,center]{caption}	
 \usepackage{subcaption}
-    \DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
-    \DeclareCaptionLabelFormat{gosttable}{Таблица #2}
-    \DeclareCaptionLabelSeparator{gost}{~---~}
-    \captionsetup{labelsep=gost}
-    \captionsetup[figure]{labelformat=gostfigure}
-    \captionsetup[table]{labelformat=gosttable}
+  \DeclareCaptionLabelFormat{gostfigure}{Рисунок #2}
+  \DeclareCaptionLabelFormat{gosttable}{Таблица #2}
+  \DeclareCaptionLabelSeparator{gost}{~---~}
+  \captionsetup{labelsep=gost}
+  \captionsetup[figure]{labelformat=gostfigure}
+  \captionsetup[table]{labelformat=gosttable}
 	\renewcommand{\thesubfigure}{\asbuk{subfigure}}
-% Or this way:
-%\usepackage{caption}
-%\DeclareCaptionFormat{GOSTtable}{#2#1\\#3}
-%\DeclareCaptionLabelSeparator{fill}{\hfill}
-%\DeclareCaptionLabelFormat{fullparents}{\bothIfFirst{#1}{~}#2}
-%\captionsetup[table]{
-%    format=GOSTtable,
-%    font={footnotesize},
-%    labelformat=fullparents,
-%    labelsep=fill,
-%    labelfont=it,
-%    textfont=bf,
-%    justification=centering,
-%    singlelinecheck=false}
 
 
 %%% Page options %%%
@@ -124,24 +110,17 @@
 	\geometry{left=20mm}
 	\geometry{right=20mm}
 \usepackage{multicol}{2}    % several text columns  
-\usepackage{setspace}	    % line spacing	
-    \onehalfspacing 
-    %\doublespacing  
-    %\singlespacing
-% Other methods:
-%\linespread{1.3}
-%\renewcommand{\baselinestretch}{1.65}
+\usepackage{setspace}	      % line spacing	
+  \onehalfspacing 
+  %\doublespacing  
+  %\singlespacing
 
-\sloppy					% getting rid of the overflow
+\sloppy					      % getting rid of the overflow
 \clubpenalty=10000		% prevent a page break after the first line of the paragraph 
 \widowpenalty=10000		% prevent a page break after the last line of the paragraph
 \tolerance = 300
 \righthyphenmin = 2 
 \doublehyphendemerits = 35000
-
-% Новые команды для постановки ссылки на сноску и для ссылки на сноску:
-\newcommand{\footnoteremember}[2]{\footnote{#2} \newcounter{#1} \setcounter{#1}{\value{footnote}}}
-\newcommand{\footnoterecall}[1]{\footnotemark[\value{#1}]}
 
 % Начинать новую главу с той же строки
 \makeatletter
@@ -157,14 +136,14 @@
 
 %%% Theorems %%%
 \theoremstyle{plain}
-    \newtheorem{theorem}{Теорема}
-    \newtheorem{proposition}[theorem]{Утверждение}
+  \newtheorem{theorem}{Теорема}
+  \newtheorem{proposition}[theorem]{Утверждение}
 \theoremstyle{definition}
-    \newtheorem{definition}{Определение}[section]
-    \newtheorem{corollary}{Следствие}[theorem]
-    \newtheorem{problem}{Задача}[section]
+  \newtheorem{definition}{Определение}[section]
+  \newtheorem{corollary}{Следствие}[theorem]
+  \newtheorem{problem}{Задача}[section]
 \theoremstyle{remark}
-    \newtheorem*{nonum}{Решение}
+  \newtheorem*{nonum}{Решение}
 
 
 %%% Table of contents %%%
@@ -188,41 +167,42 @@
 
 
 %%% Hyperrefs %%%
-\usepackage{csquotes}       % reference tools
+\usepackage{csquotes}    % reference tools
 \usepackage[plainpages=false,pdfpagelabels=false]{hyperref}
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
 	\definecolor{linkcolor}{rgb}{0.9,0,0}
 	\definecolor{urlcolor}{rgb}{0,0,1}
-\hypersetup{				% гиперссылки
-	%draft, 				% uncomment to remove all links (useful for printing in black and white)
-    unicode=true,           
-    pdftitle={Заголовок},   
-    pdfauthor={\textcopyright},     
-    pdfsubject={Тема},      
-    pdfcreator={Создатель}, 
-    pdfproducer={Производитель},
-    pdfkeywords={keyword1} {keyword2}, 
-    colorlinks=true,       	% false: links in boxes; true: colored links
-    breaklinks=true,
-    bookmarks=true,
-    bookmarksnumbered,
+\hypersetup{				     % гиперссылки
+	%draft, 				       % uncomment to remove all links (useful for printing in black and white)
+  unicode=true,           
+  pdftitle={Заголовок},   
+  pdfauthor={\textcopyright},     
+  pdfsubject={Тема},      
+  pdfcreator={Создатель}, 
+  pdfproducer={Производитель},
+  pdfkeywords={keyword1} {keyword2}, 
+  colorlinks=true,       	% false: links in boxes; true: colored links
+  breaklinks=true,
+  bookmarks=true,
+  bookmarksnumbered,
 	urlcolor=webbrown,
 	linkcolor={linkcolor},
-    citecolor=black,     
-    filecolor=magenta,      
-    urlcolor={urlcolor}}
+  citecolor=black,     
+  filecolor=magenta,      
+  urlcolor={urlcolor}}
 
 
 %%% Bibliography %%%
 \usepackage{thebibliorgaphy}
-\usepackage{cite}                 % beautiful cites
+\usepackage{cite}                % beautiful cites
 \usepackage[square,numbers,sort&compress]{natbib}
 \renewcommand{\bibsection}{\likechapter{Список литературы}} % rename bibliography section
-	\setlength{\bibsep}{0pt}
+\setlength{\bibsep}{0pt}
 \makeatletter
 \bibliographystyle{utf8gost705u}  % bibliography GOST
 \renewcommand{\@biblabel}[1]{#1.} % numbering through the dot
 \makeatother
+
 
 %%% BibLaTeX %%%
 \usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=2,style=authoryear]{biblatex}
@@ -372,6 +352,6 @@
 \renewcommand{\lstlistingname}{Код}
 
 
-\title{\normalfont\spacedallcaps{Название статьи}}
-\author{\spacedlowsmallcaps{JohnSmith* \& YourName\textsuperscript{1}}}
+\title{}
+\author{}
 \date{}
